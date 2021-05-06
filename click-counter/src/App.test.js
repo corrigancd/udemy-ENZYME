@@ -57,14 +57,24 @@ test('counter increments when button is clicked', () => {
   expect(count).toBe("1");
 });
 
-test('counter decrements when button is clicked', () => {
+test('counter decrements when button is clicked and warning displayed', () => {
   const wrapper = setup();
   
   // find button and click
   const button = findByTestAttr(wrapper, 'decrement-button');
+
+  // check there is no warning because the component initializes with 0
+  const preDecrementWarning = findByTestAttr(wrapper, 'warning');
+  expect(preDecrementWarning.length).toBe(0)
+  
+  // decrement the counter
   button.simulate('click');
 
-  // check the counter
+  // verify that the test is below 0
   const count = findByTestAttr(wrapper, 'count').text();
   expect(count).toBe("-1");
+
+  // check there is a warning displayed
+  const postDecrementWarning = findByTestAttr(wrapper, 'warning');
+  expect(postDecrementWarning.length).toBe(1)
 });
