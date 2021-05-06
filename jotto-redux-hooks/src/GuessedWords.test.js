@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { shallow } from 'enzyme';
 import { findByTestAttr, checkProps } from '../test/testUtils';
@@ -57,6 +56,8 @@ describe('if there are words guessed', () => {
     expect(guessedWordsNode.length).toBe(1);
   });
   test('correct number of guessed words', () => {
+    // From enzyme doc, wrapper.find, finds and returns every node in the render tree of the
+    // current wrapper that matches the provided selector
     const guessedWordNodes = findByTestAttr(wrapper, 'guessed-word');
     expect(guessedWordNodes.length).toBe(guessedWords.length);
   });

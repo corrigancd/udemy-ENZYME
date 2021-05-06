@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+Use Node < v14 when running `npm i`. Reason: https://github.com/facebook/create-react-app/issues/10811#issuecomment-818426711
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
