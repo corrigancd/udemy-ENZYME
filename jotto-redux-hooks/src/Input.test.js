@@ -1,9 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
 import { findByTestAttr, checkProps, storeFactory } from '../test/testUtils';
 import { Provider } from 'react-redux';
 
 import Input from './Input';
+
+import EnzymeAdapter from '@wojtekmaj/enzyme-adapter-react-17';
+Enzyme.configure({ adapter: new EnzymeAdapter() });
 
 // mock entire module for destructuring useState on import //////
 // const mockSetCurrentGuess = jest.fn();
