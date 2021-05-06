@@ -11,6 +11,12 @@ function App() {
         <span data-test="count">{count}</span>
       </h1>
       <button
+        data-test="decrement-button"
+        onClick={() => setCount(count - 1)}
+      >
+        Decrement counter
+      </button>
+      <button
         data-test="increment-button"
         onClick={() => setCount(count + 1)}
       >
