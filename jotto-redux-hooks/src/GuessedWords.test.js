@@ -1,9 +1,9 @@
+
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import { findByTestAttr, checkProps } from '../test/testUtils';
 import GuessedWords from './GuessedWords';
-import EnzymeAdapter from '@wojtekmaj/enzyme-adapter-react-17';
-Enzyme.configure({ adapter: new EnzymeAdapter() });
+
 
 const defaultProps = {
   guessedWords: [{ guessedWord: 'train', letterMatchCount: 3 }],

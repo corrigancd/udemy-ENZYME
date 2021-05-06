@@ -1,12 +1,9 @@
 import React from "react";
-import Enzyme, { mount } from "enzyme";
+import { mount } from "enzyme";
 import { Provider } from "react-redux";
 
 import { findByTestAttr, storeFactory } from "../test/testUtils";
 import App from "./App";
-
-import EnzymeAdapter from '@wojtekmaj/enzyme-adapter-react-17';
-Enzyme.configure({ adapter: new EnzymeAdapter() });
 
 // activate global mock to make sure getSecretWord doesn't make network call
 jest.mock("./actions");
