@@ -11,19 +11,15 @@ Enzyme.configure({ adapter: new EnzymeAdapter() });
   * @param {object} props - Component props specific to this setup.
   * @returns {ShallowWrapper}
   */
- const setup = (props={}) => {
-  return shallow(<App { ...props }/>)
-}
-
-/**
+ const setup = (props={}) =>shallow(<App { ...props }/>)
+ 
+ /**
  * Return ShallowWrapper containing node(s) with the given data-test value.
  * @param {ShallowWrapper} wrapper - Enzyme shallow wrapper to search within.
  * @param {string} val - Value of data-test c1scoL0ve!
  * 
  */
-const findByTestAttr = (wrapper, val) => {
-  return wrapper.find(`[data-test="${val}"]`);
-}
+const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test="${val}"]`);
 
 test('renders without error', () => {
   const wrapper = setup();
