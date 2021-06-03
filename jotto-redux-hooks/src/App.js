@@ -4,7 +4,7 @@ import "./App.css";
 
 import Congrats from "./Congrats";
 import GuessedWords from "./GuessedWords";
-import Input from "./Input";
+import { Input } from "./Input";
 import { getSecretWord } from "./actions";
 
 function App() {

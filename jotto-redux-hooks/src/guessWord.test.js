@@ -42,6 +42,7 @@ describe('no words guessed', () => {
   });
   test('creates GuessedWords table with one row', () => {
     const guessedWordRows = findByTestAttr(wrapper, 'guessed-word');
+    console.log(guessedWordRows)
     expect(guessedWordRows).toHaveLength(1);
   });
 });
