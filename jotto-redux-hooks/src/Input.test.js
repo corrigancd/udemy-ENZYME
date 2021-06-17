@@ -15,8 +15,9 @@ describe("Testing Input.js", () => {
   const setup = ({ success = false, secretWord = "party" }) => {
     const store = storeFactory({ success, secretWord });
     return mount(
+      // this must be mount because we need state to be available in Input component (for useSelector)
       <Provider store={store}>
-        <Input success={success} secretWord={secretWord} />
+        <Input success={success}/>
       </Provider>
     );
   };
@@ -30,7 +31,6 @@ describe("Testing Input.js", () => {
       });
 
       test("component should render without error", () => {
-        const wrapper = setup({});
         const inputComponent = findByTestAttr(wrapper, "input-component");
         expect(inputComponent.length).toBe(1);
       });
@@ -50,7 +50,7 @@ describe("Testing Input.js", () => {
       let wrapper;
 
       beforeEach(() => {
-        wrapper = setup({ success: false });
+        wrapper = setup({});
       });
 
       test("component should render without error", () => {
@@ -72,7 +72,7 @@ describe("Testing Input.js", () => {
   });
 
   test("does not throw a warning with expected props", () => {
-    checkProps(Input, { secretWord: "party" });
+    checkProps(Input, { success: false, secretWord: "party" });
   });
 
   describe("state controlled input field", () => {

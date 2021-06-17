@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { guessWord } from './actions';
 
-function Input({ secretWord }) {
+function Input() {
   const [currentGuess, setCurrentGuess] = React.useState("");
   const dispatch = useDispatch();
   const success = useSelector(state => state.success);
@@ -44,7 +44,7 @@ function Input({ secretWord }) {
 };
 
 Input.propTypes = {
-  secretWord: PropTypes.string.isRequired,
+  success: PropTypes.bool.isRequired,
 };
 
 export { Input };

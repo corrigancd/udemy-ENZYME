@@ -19,20 +19,18 @@ export const guessWord = (guessedWord) => {
     const secretWord = getState().secretWord;
     const letterMatchCount = getLetterMatchCount(guessedWord, secretWord);
 
+    // dispatch action to update the list of guessed words in state (see guessedWordsReducer.js)
     dispatch({
       type: actionTypes.GUESS_WORD,
       payload: { guessedWord, letterMatchCount }
     });
-
+ 
+    // dispatch action to update the guessed state (see successReducer.js)
     if (guessedWord === secretWord) {
       dispatch({ type: actionTypes.CORRECT_GUESS });
     }
   };
 };
-
-export function correctGuess() {
-  return { type: actionTypes.CORRECT_GUESS };
-}
 
 /**
  * Returns Redux Thunk function that initiates an axios request

@@ -1,6 +1,7 @@
 import { storeFactory } from '../test/testUtils';
 import { guessWord } from './actions';
-
+// by doing the 'functional' integration tests here. We can refactor the reducers, and these tests can still pass
+// the drawback of these is that it can be difficult to identify failures
 describe('guessWord action dispatcher', () => {
   const secretWord = 'party';
   const unsuccessfulGuess = 'train';
