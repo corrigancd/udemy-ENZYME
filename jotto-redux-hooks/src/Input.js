@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-const Input = ({ success, secretWord }) => {
+import { guessWord } from './actions';
+
+function Input({ secretWord }) {
   const [currentGuess, setCurrentGuess] = React.useState("");
-  // const dispatch = useDispatch();
-
-  // React.useEffect(() => {
-  //   // get the secret word
-  //   dispatch(getSecretWord());
-  // }, []);
+  const dispatch = useDispatch();
+  const success = useSelector(state => state.success);
 
   return (
     <div data-test="input-component">
@@ -32,7 +30,7 @@ const Input = ({ success, secretWord }) => {
             data-test="submit-button"
             onClick={(evt) => {
               evt.preventDefault();
-              // dispatch(guessWord(currentGuess));
+              dispatch(guessWord(currentGuess));
               setCurrentGuess("");
             }}
             className="btn btn-primary mb-2"

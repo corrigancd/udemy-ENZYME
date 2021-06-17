@@ -6,7 +6,7 @@ import { actionTypes } from '../actions';
  * @param {object} action - action to be reduced.
  * @returns {boolean} - new success state.
  */
-export default (state=false, action) => {
+const successReducer = (state=false, action) => {
   switch(action.type) {
     case (actionTypes.CORRECT_GUESS):
       return true;
@@ -14,3 +14,5 @@ export default (state=false, action) => {
       return state;
   }
 }
+
+export { successReducer };

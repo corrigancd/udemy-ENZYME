@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { shallow } from "enzyme";
+import React from "react";
+import { mount } from "enzyme";
 import { findByTestAttr, checkProps, storeFactory } from "../test/testUtils";
-// import { Provider } from 'react-redux';
+import { Provider } from "react-redux";
 import { Input } from "./Input";
 
 // how to mock destructured react hooks
@@ -13,17 +13,22 @@ import { Input } from "./Input";
 
 describe("Testing Input.js", () => {
   const setup = ({ success = false, secretWord = "party" }) => {
-    return shallow(<Input success={success} secretWord={secretWord}></Input>);
+    const store = storeFactory({ success, secretWord });
+    return mount(
+      <Provider store={store}>
+        <Input success={success} secretWord={secretWord} />
+      </Provider>
+    );
   };
 
   describe("render", () => {
     describe("Success is true", () => {
       let wrapper;
-      
+
       beforeEach(() => {
-        wrapper = setup({ success : true});
+        wrapper = setup({ success: true });
       });
-      
+
       test("component should render without error", () => {
         const wrapper = setup({});
         const inputComponent = findByTestAttr(wrapper, "input-component");
@@ -31,23 +36,23 @@ describe("Testing Input.js", () => {
       });
 
       test("input box does not show", () => {
-        const inputBox = findByTestAttr(wrapper, 'input-box');
+        const inputBox = findByTestAttr(wrapper, "input-box");
         expect(inputBox.exists()).toBe(false);
       });
 
       test("submit button does not show", () => {
-        const submitButton = findByTestAttr(wrapper, 'submit-button');
+        const submitButton = findByTestAttr(wrapper, "submit-button");
         expect(submitButton.exists()).toBe(false);
       });
     });
 
     describe("Success is false", () => {
       let wrapper;
-      
+
       beforeEach(() => {
-        wrapper = setup({ success : false});
+        wrapper = setup({ success: false });
       });
-      
+
       test("component should render without error", () => {
         const wrapper = setup({});
         const inputComponent = findByTestAttr(wrapper, "input-component");
@@ -55,12 +60,12 @@ describe("Testing Input.js", () => {
       });
 
       test("input box does not show", () => {
-        const inputBox = findByTestAttr(wrapper, 'input-box');
+        const inputBox = findByTestAttr(wrapper, "input-box");
         expect(inputBox.exists()).toBe(true);
       });
 
       test("submit button does not show", () => {
-        const submitButton = findByTestAttr(wrapper, 'submit-button');
+        const submitButton = findByTestAttr(wrapper, "submit-button");
         expect(submitButton.exists()).toBe(true);
       });
     });

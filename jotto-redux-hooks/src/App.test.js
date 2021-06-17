@@ -4,10 +4,11 @@ import { Provider } from "react-redux";
 
 import { findByTestAttr, storeFactory } from "../test/testUtils";
 import App from "./App";
+import { getSecretWord as mockGetSecretWord } from "./actions";
 
 // activate global mock to make sure getSecretWord doesn't make network call
+// notice that we pass the path that contains a __mocks__ folder
 jest.mock("./actions");
-import { getSecretWord as mockGetSecretWord } from "./actions";
 
 /**
  * Setup function for App component

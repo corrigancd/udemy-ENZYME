@@ -7,6 +7,7 @@ import App from './App';
 import store from './configureStore';
 import reportWebVitals from './reportWebVitals';
 
+// Provider wraps App so that everything in the the provider, will be available in App
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

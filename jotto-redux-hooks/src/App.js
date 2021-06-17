@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     // get the secret word
     dispatch(getSecretWord());
-  }, []);
+  }, []); // runs only on mount
 
   return (
     <div data-test="component-app" className="container">

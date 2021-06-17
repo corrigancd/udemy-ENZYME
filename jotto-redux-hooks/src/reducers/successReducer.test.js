@@ -1,5 +1,5 @@
 import { actionTypes } from '../actions';
-import successReducer from './successReducer';
+import { successReducer }from './successReducer';
 
 test('when previous state is undefined, return false', () => {
   const newState = successReducer(undefined, {});

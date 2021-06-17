@@ -30,6 +30,10 @@ export const guessWord = (guessedWord) => {
   };
 };
 
+export function correctGuess() {
+  return { type: actionTypes.CORRECT_GUESS };
+}
+
 /**
  * Returns Redux Thunk function that initiates an axios request
  *    and dispatches the response as a 'SET_SECRET_WORD' action

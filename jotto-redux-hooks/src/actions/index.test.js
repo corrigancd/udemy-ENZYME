@@ -1,7 +1,7 @@
 import moxios from 'moxios';
 
 import { storeFactory } from '../../test/testUtils';
-import { getSecretWord } from './';
+import { getSecretWord, correctGuess, actionTypes } from './';
 
 describe('getSecretWord', () => {
   beforeEach(() => {
@@ -26,4 +26,11 @@ describe('getSecretWord', () => {
         expect(secretWord).toBe('party');
       });
   });
+});
+
+describe('correctGuess', () => {
+  test('returns an action with type "CORRECT_GUESS"', () => {
+    const action = correctGuess();
+    expect(action).toStrictEqual({ type: actionTypes.CORRECT_GUESS })
+  })
 });
