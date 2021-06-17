@@ -1,3 +1,29 @@
+# Jotto
+## Libraies used:
+Create React App,
+Redux Thunk,
+React Redux,
+React,
+**Testing:**
+Jest,
+Enzyme,
+Moxios,
+
+## Getting the App working
+
+1. Clone this repository.
+2. Open the random word server folder in a terminal and type `npm start`
+3. Open the jotto-redux-hooks folder in a terminal and type `npm start`
+4. A browser will automatically open
+
+## Jotto screenshots
+
+### Here is how the app looks during its guessing phase:
+![image](https://user-images.githubusercontent.com/36197976/122413336-319af580-cf7e-11eb-83d7-c2907f77166b.png)
+
+### Here is how the app looks during its successful guess phase:
+![image](https://user-images.githubusercontent.com/36197976/122413179-162fea80-cf7e-11eb-9743-ab2197cedcb6.png)
+
 # Getting Started with Create React App
 
 Use Node < v14 when running `npm i`. Reason: https://github.com/facebook/create-react-app/issues/10811#issuecomment-818426711
