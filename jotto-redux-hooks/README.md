@@ -1,9 +1,20 @@
-# Jotto screenshots
+# Jotto
+## Libraies used:
+Create React App,
+Redux Thunk,
+React Redux,
+React,
+**Testing:**
+Jest,
+Enzyme,
+Moxios,
 
-## Here is how the app looks during its guessing phase:
+## Jotto screenshots
+
+### Here is how the app looks during its guessing phase:
 ![image](https://user-images.githubusercontent.com/36197976/122413336-319af580-cf7e-11eb-83d7-c2907f77166b.png)
 
-## Here is how the app looks during its successful guess phase:
+### Here is how the app looks during its successful guess phase:
 ![image](https://user-images.githubusercontent.com/36197976/122413179-162fea80-cf7e-11eb-9743-ab2197cedcb6.png)
 
 # Getting Started with Create React App
