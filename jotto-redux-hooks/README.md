@@ -9,6 +9,13 @@ Jest,
 Enzyme,
 Moxios,
 
+## Getting the App working
+
+1. Clone this repository.
+2. Open the random word server folder in a terminal and type `npm start`
+3. Open the jotto-redux-hooks folder in a terminal and type `npm start`
+4. A browser will automatically open
+
 ## Jotto screenshots
 
 ### Here is how the app looks during its guessing phase:
